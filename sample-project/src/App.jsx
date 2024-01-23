@@ -1,33 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// Importacion de los assets
+import socialIcon from './assets/social.svg'
+import gitIcon from './assets/github.svg'
+
+// Importacion del CSS
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// Importamos los componentes personalizados
+import ComponenteContador from './componentes/componente.jsx'
+import ComponenteFollow from './componentes/componenteFollow.jsx'
 
+function App() {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://github.com/DanielM0reno" target="_blank">
+          <img src={gitIcon} className="logo" alt="Vite logo" /> <h2>DanielM0reno</h2>
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <h1>Componente 1:</h1>
+      <div className="contenedor">
+        <ComponenteContador/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+      <hr />
+      <h1>Componente 2:</h1>
+      <div className="contenedor">
+        <ComponenteFollow username='daniM0reno' initialIsFollowing>
+          DaniM0reno
+        </ComponenteFollow>
+        <br />
+        <ComponenteFollow username='joseluiiis' initialIsFollowing = {false}>
+          ErJoseluiii
+        </ComponenteFollow>
+      </div>
+      <hr />
     </>
   )
 }
